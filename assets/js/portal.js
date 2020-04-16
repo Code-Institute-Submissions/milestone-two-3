@@ -24,6 +24,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 //ISS Position Ingest
 function moveISS () {
+    
     $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
         var lat = data['iss_position']['latitude'];
         var lon = data['iss_position']['longitude'];
@@ -50,10 +51,17 @@ var iss = L.marker([0, 0], {icon: ISSIcon}).addTo(map);
 moveISS();
 
 //People in space
-$.getJSON('http://api.open-notify.org/astros.json?callback=?', function(data) {
-   var number = data['number'];
-   $('#soulsonboard').html(number);
- });
+$.ajax({
+    beforeSend: function(request) {
+        request.setRequestHeader("X-Mashape-Key", 'key_here');
+    },
+    dataType: "json",
+    url: 'http://api.open-notify.org/astros.json?callback=?',
+    success: function(data) {
+           var number = data['number'];
+            $('#soulsonboard').html(number);
+    }
+});    
 
 //News Feed 
 $(function () {
