@@ -64,12 +64,12 @@ The site has a space feel to it, it uses orbitron font and has a color scheme an
     - Sometimes the leaflet.js map tiles would not load
     - Found other bugs that I would fix
 - Had a friend and mentor review the code and site
-- Discovered that open-notify is served over an HTTP server, which means that I could not test the functionality on gitpod which is served on a HTTPS server due to the same origin policy issue. As such I had to move the repo to my local, and use Atom to iterate on the site. 
+- Discovered that open-notify is served over an HTTP server, which means that I could not test the functionality on gitpod/github pages which is served on a HTTPS server due to the same origin policy issue. As such I had to move the repo to my local, and use Atom to iterate on the site. 
 
 ## Deployment
 To run the project locally, you should just have to download all the files, place the root in the same folder, or clone the repo to you local. Open index.html and the site should render in your default browser.
 
-In order to get the site live, I had to obtain a custom domain from go-daddy.com to avoid the same origin policy issue.
+In order to get the site live, I had to obtain a custom domain from go-daddy.com to avoid the same origin policy issue. I followed this guide to connect my repo to the godaddy domain: https://hackernoon.com/how-to-set-up-godaddy-domain-with-github-pages-a9300366c7b
 
 ## Credits
 
